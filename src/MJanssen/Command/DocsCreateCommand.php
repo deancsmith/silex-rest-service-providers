@@ -46,7 +46,7 @@ class DocsCreateCommand extends ContainerAwareCommand
         if(null === $this->process) {
             $this->setProcess(
                 new Process(
-                    sprintf('cd %s && php vendor/bin/swagger ./ -o ./api-docs -e vendor/doctrine:vendor/zircote:vendor/symfony:vendor/zendframework:vendor/jms',$this->getApplicationPath())
+                    sprintf('cd %s && vendor' . DIRECTORY_SEPARATOR . 'bin' . DIRECTORY_SEPARATOR . 'swagger ./ -o ./api-docs -e vendor/doctrine:vendor/zircote:vendor/symfony:vendor/zendframework:vendor/jms',$this->getApplicationPath())
                 )
             );
         }
